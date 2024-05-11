@@ -124,6 +124,10 @@ celerybeat.pid
 .venv
 env/
 venv/
+bar-archive-frontend/node_modules/
+bar-archive-api-gateway/venv/
+bar-archive-email-service/venv/
+bar-archive-service/venv/
 ENV/
 env.bak/
 venv.bak/

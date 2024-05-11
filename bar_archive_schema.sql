@@ -1,0 +1,31 @@
+CREATE TABLE IF NOT EXISTS beverage (
+  beverage_id SERIAL PRIMARY KEY, 
+  beverage_name VARCHAR (255) NOT NULL, 
+  description VARCHAR (255) NOT NULL,  
+  created_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP, 
+  updated_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS ingredient (
+  ingredient_id SERIAL PRIMARY KEY,
+  beverage_id INT1, 
+  ingredient_name VARCHAR (255) NOT NULL, 
+  created_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP, 
+  updated_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
+  CONSTRAINT fk_beverage
+    FOREIGN KEY(beverage_id) 
+	REFERENCES beverage(beverage_id)
+	ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS method (
+  method_id SERIAL PRIMARY KEY,
+  beverage_id INT, 
+  description VARCHAR (255) NOT NULL, 
+  created_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP, 
+  updated_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
+  CONSTRAINT fk_beverage
+    FOREIGN KEY(beverage_id) 
+	REFERENCES beverage(beverage_id)
+	ON DELETE CASCADE
+);
