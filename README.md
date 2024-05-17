@@ -48,6 +48,7 @@ To compose down run, remove images and volumes
 ## Authors
 
 - [@singatha](https://www.github.com/singatha)
+- [@male-b](https://www.github.com/male-b)
 
 ## Roadmap
 
